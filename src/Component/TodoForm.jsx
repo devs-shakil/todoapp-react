@@ -1,36 +1,17 @@
-import React, { useState } from "react";
+import React from 'react'
 
-const TodoForm = (props) =>{
-    const [input, setInput] = useState('');
-    const handleChange = (e) =>{
-        setInput(e.target.value);
-    }
+const TodoForm = ()  => {
+  return (
+     <form className="todo_form" autoComplete="off">
+          <button type="submit" className="submit_btn"
+          >Submit</button>
 
-    const handleSubmit = (e)=>{
-        e.preventDefault();
+           <input type="text" name="add_todo" placeholder="Create a new todo..." />
+           
+            <input type="text" name="hidden_item" hidden />
+     </form>
 
-        // props.onSubmit({
-        //     id: Math.floor(Math.random()*1000),
-        //     text:input,
-
-        // })
-        setInput('');
-        
-    }
-    return(
-       <form className="todo-form" onSubmit={handleSubmit}>
-           <input
-            type="text" 
-            placeholder="Add a todo"
-            value={input}
-            name='text'
-            className="todo-input"
-            onChange={handleChange}
-            />
-            <button className="todo-submit">Submit</button>
-
-       </form>
-    )
+  )
 }
 
-export default TodoForm;
+export default TodoForm
