@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Task from './Task'
 
-const Footer = () => {
+const Footer = ({todoTasks}) => {
+    const [edit, setEdit] = useState({});
+    console.log(edit)
   return (
     <div className="todo-items-wrapper">
-        <ul className="todo-items"></ul>
+        {Array.isArray(todoTasks) && todoTasks.length>0 && (
+                 <ul className="todo-items">
+                     {todoTasks.map(item=>(
+                        <Task
+                          key ={item.id}
+                          item={item} 
+                          setEdit={setEdit}
+                        />
+                     ))}
+                    
+                 </ul>
+        )}
+           
 
         <div className="todo-footer">
             <div className="left-items">5 Items left</div>

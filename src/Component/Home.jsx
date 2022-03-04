@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from './Footer'
 import TodoForm from './TodoForm'
 
 const Home = () => {
-    const [todo]
+    const [todoTasks, setTodoTasks] = useState([]);
+  
+
   return (
     
     <div className="container">
                 
-          <TodoForm/>
-          <Footer/>
-
+          <TodoForm tasks={todoTasks} setTodoTasks={setTodoTasks}/>
+          <Footer  todoTasks={todoTasks}/>
     </div>
   )
 }

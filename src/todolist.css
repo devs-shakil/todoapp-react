@@ -174,3 +174,7 @@ header {
   border: 0;
   color: var(--light-grayish-blue2);
 }
+.img-color{
+  filter: brightness(0) invert(1);
+  margin-right:1.8rem;
+}
